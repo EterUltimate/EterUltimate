@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300" width="100%" height="100%">
+  <defs>
+    <!-- Glowing Drop Shadow Filter -->
+    <filter id="neon-glow" x="-25%" y="-20%" width="150%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    
+    <!-- Pulse Keyframe Animations -->
+    <style>
+      @keyframes core-pulse {
+        0%, 100% { opacity: 0.3; filter: drop-shadow(0 0 1px #00FF66); }
+        50% { opacity: 0.95; filter: drop-shadow(0 0 12px #00FF66); }
+      }
+      @keyframes beam-dash {
+        0% { stroke-dashoffset: 60; }
+        100% { stroke-dashoffset: 0; }
+      }
+      
+      .cyber-border { stroke: #00FF66; stroke-width: 1.5; opacity: 0.7; fill: none; }
+      .cyber-sub-border { stroke: #1a5c2d; stroke-width: 1; fill: none; }
+      .text-title { font-family: "SFMono-Regular", Consolas, monospace; fill: #00FF66; font-size: 16px; font-weight: bold; letter-spacing: 1px; }
+      .text-node { font-family: "SFMono-Regular", Consolas, monospace; fill: #ffffff; font-size: 11px; font-weight: bold; }
+      .text-node-category { font-family: "SFMono-Regular", Consolas, monospace; fill: #00FF66; font-size: 13px; font-weight: bold; filter: url(#neon-glow); }
+      .node-core { fill: #00FF66; filter: url(#neon-glow); animation: core-pulse 4s infinite ease-in-out; }
+      .node-point { fill: #00FF66; }
+      .node-beam { stroke: #00441b; stroke-width: 1.2; fill: none; }
+      .node-beam-active { stroke: #00FF66; stroke-width: 1; stroke-dasharray: 4, 8; fill: none; animation: beam-dash 3s linear infinite; }
+    </style>
+  </defs>
+
+  <!-- Solid Dark Charcoal Background -->
+  <rect width="1000" height="300" fill="#000000" />
+
+  <!-- Grid Overlay -->
+  <g opacity="0.04">
+    <path d="M 0,0 L 1000 0 M 0,30 L 1000 30 M 0,60 L 1000 60 M 0,90 L 1000 90 M 0,120 L 1000 120 M 0,150 L 1000 150 M 0,180 L 1000 180 M 0,210 L 1000 210 M 0,240 L 1000 240 M 0,270 L 1000 270" stroke="#00FF66" stroke-width="0.5"/>
+    <path d="M 0,0 L 0 300 M 100,0 L 100 300 M 200,0 L 200 300 M 300,0 L 300 300 M 400,0 L 400 300 M 500,0 L 500 300 M 600,0 L 600 300 M 700,0 L 700 300 M 800,0 L 800 300 M 900,0 L 900 300" stroke="#00FF66" stroke-width="0.5"/>
+  </g>
+
+  <!-- Outer Cyber-Terminal Border with cut corners -->
+  <path d="M 15,20 L 985 20 L 985 270 L 970 285 L 15 285 Z" class="cyber-border" />
+  <path d="M 10,15 L 990 15 L 990 265 L 975 290 L 10 290 Z" class="cyber-sub-border" stroke-dasharray="80, 20, 15, 20" />
+
+  <!-- Section Title -->
+  <text x="35" y="45" class="text-title">&gt; COGNITIVE_FRAMEWORK // SKILL_MATRIX</text>
+  <line x1="35" y1="55" x2="350" y2="55" stroke="#00FF66" stroke-width="1.5" opacity="0.8"/>
+
+  <!-- CENTRAL NODE: Cognitive Core Matrix (cx=500, cy=165) -->
+  <g>
+    <!-- Background Rings -->
+    <circle cx="500" cy="165" r="45" fill="none" stroke="#00441b" stroke-width="1" stroke-dasharray="5, 3" />
+    <circle cx="500" cy="165" r="8" class="node-core" />
+    <circle cx="500" cy="165" r="1" fill="#ffffff" />
+    <text x="500" y="130" font-family="SFMono-Regular, Consolas, monospace" font-size="10" fill="#00FF66" text-anchor="middle" font-weight="bold">AI_NEURAL_BUS</text>
+  </g>
+
+  <!-- NODE SECTOR 1: LANGUAGES & ENGINE (Top-Left: 250, 100) -->
+  <g>
+    <line x1="500" y1="165" x2="250" y2="100" class="node-beam" />
+    <line x1="500" y1="165" x2="250" y2="100" class="node-beam-active" />
+    <circle cx="250" cy="100" r="5" class="node-point" />
+    <text x="240" y="80" class="text-node-category" text-anchor="end">[LANG_KERNEL]</text>
+    <text x="240" y="102" class="text-node" text-anchor="end">Python (asyncio / multi-threading)</text>
+    <text x="240" y="118" class="text-node" text-anchor="end">TypeScript // Dart // SQL</text>
+  </g>
+
+  <!-- NODE SECTOR 2: AI & AGENT ENGINE (Bottom-Left: 220, 210) -->
+  <g>
+    <line x1="500" y1="165" x2="220" y2="210" class="node-beam" />
+    <line x1="500" y1="165" x2="220" y2="210" class="node-beam-active" style="animation-delay: -1s;" />
+    <circle cx="220" cy="210" r="5" class="node-point" />
+    <text x="210" y="195" class="text-node-category" text-anchor="end">[AI_INTELLIGENCE]</text>
+    <text x="210" y="215" class="text-node" text-anchor="end">LLM Orchestration // Agent Sandboxing</text>
+    <text x="210" y="230" class="text-node" text-anchor="end">Model Context Protocol (MCP SDK)</text>
+  </g>
+
+  <!-- NODE SECTOR 3: FRAMEWORKS & client (Top-Right: 750, 100) -->
+  <g>
+    <line x1="500" y1="165" x2="750" y2="100" class="node-beam" />
+    <line x1="500" y1="165" x2="750" y2="100" class="node-beam-active" style="animation-delay: -1.5s;" />
+    <circle cx="750" cy="100" r="5" class="node-point" />
+    <text x="760" y="80" class="text-node-category" text-anchor="start">[GUI_MATRIX]</text>
+    <text x="760" y="102" class="text-node" text-anchor="start">Flutter // Vue &amp; Vite // Node.js</text>
+    <text x="760" y="118" class="text-node" text-anchor="start">FastAPI // WebUI Dashboard Design</text>
+  </g>
+
+  <!-- NODE SECTOR 4: INFRASTRUCTURE (Bottom-Right: 780, 210) -->
+  <g>
+    <line x1="500" y1="165" x2="780" y2="210" class="node-beam" />
+    <line x1="500" y1="165" x2="780" y2="210" class="node-beam-active" style="animation-delay: -2s;" />
+    <circle cx="780" cy="210" r="5" class="node-point" style="fill: #FF007F;" />
+    <text x="790" y="195" class="text-node-category" text-anchor="start" style="fill: #FF007F;">[INFRASTRUCTURE]</text>
+    <text x="790" y="215" class="text-node" text-anchor="start">Docker Containerization // Git Worktrees</text>
+    <text x="790" y="230" class="text-node" text-anchor="start">Linux Server Administration // CI/CD</text>
+  </g>
+</svg>
