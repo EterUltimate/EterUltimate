@@ -25,9 +25,25 @@
   <img src="./cognitive_framework.svg" width="100%" alt="EterUltimate Cognitive Skill Matrix" />
 </p>
 
+<!-- Cyber CSS Styling for Inline Buttons -->
+<style>
+  .cyber-btn {
+    transition: filter 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+  }
+  .cyber-btn:hover {
+    filter: drop-shadow(0 0 10px #00ff66) brightness(1.25);
+    transform: translateY(-2px);
+  }
+</style>
+
 <!-- Clickable Social Ports SVG -->
 <p align="center">
-  <img src="./terminal_ports.svg" width="100%" alt="EterUltimate Terminal Connection Ports" />
+  <a href="mailto:eterultimate@agent.qq.com" class="cyber-btn"><img src="./port_ssh.svg" width="310" alt="Port SSH" /></a>
+  &nbsp;&nbsp;
+  <a href="https://github.com/EterUltimate" class="cyber-btn"><img src="./port_http.svg" width="310" alt="Port HTTP" /></a>
+  &nbsp;&nbsp;
+  <a href="https://docs.astrbot.app" target="_blank" class="cyber-btn"><img src="./port_https.svg" width="310" alt="Port HTTPS" /></a>
 </p>
 
 ---

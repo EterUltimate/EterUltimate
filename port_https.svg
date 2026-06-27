@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 310 75" width="100%" height="100%">
+  <style>
+    .glass-btn {
+      fill: #050505;
+      stroke: #1a5c2d;
+      stroke-width: 1.5;
+    }
+    .text-port {
+      font-family: "SFMono-Regular", Consolas, monospace;
+      fill: #FF007F;
+      font-size: 14px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+    .text-label {
+      font-family: "SFMono-Regular", Consolas, monospace;
+      fill: #888888;
+      font-size: 12px;
+    }
+  </style>
+  <!-- Background Base -->
+  <rect width="310" height="75" fill="none" />
+  <!-- Glassmorphic Button Box -->
+  <rect x="2" y="2" width="306" height="71" rx="5" class="glass-btn" />
+  <text x="20" y="30" class="text-port">PORT 0x443 [HTTPS]</text>
+  <text x="20" y="52" class="text-label">docs.astrbot.app</text>
+</svg>
